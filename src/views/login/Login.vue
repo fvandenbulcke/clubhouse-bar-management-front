@@ -7,7 +7,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import Login from '@/components/login';
+import Login from './components';
 
 export default {
   name: 'loginView',

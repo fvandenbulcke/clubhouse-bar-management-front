@@ -22,12 +22,8 @@ export default {
         commit(MUTATION_TYPE.UPDATE_PLAYER, player);
       });
   },
-  updatePlayerBill({ state, commit }, { drink, quantity }) {
+  updatePlayerBill({ state, commit }, bill) {
     const playerId = state.player._id;
-    const bill = {
-      drinkId: drink,
-      quantity,
-    };
     return playerService.updateBill(playerId, bill)
       .then((player) => {
         commit(MUTATION_TYPE.UPDATE_PLAYER, player);

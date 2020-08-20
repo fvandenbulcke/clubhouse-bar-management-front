@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Login from '@/views/Login';
-import ResetPassword from '@/views/ResetPassword';
-import Drinks from '@/views/Drinks';
-import AdminDrinks from '@/views/AdminDrinks';
+import Login from '@/views/login/Login';
+import ResetPassword from '@/views/resetPassword/ResetPassword';
+import Drinks from '@/views/drinks';
+import AdminDrinks from '@/views/admin/AdminDrinks';
 import Structure from '@/components/clubhouseStructure';
 
 Vue.use(VueRouter);
@@ -24,11 +24,11 @@ const routes = [
     component: ResetPassword,
   },
   {
-    path: '/achvb/drinks',
+    path: '/achvb',
     component: Structure,
     children: [
       {
-        path: '',
+        path: 'drinks',
         name: 'drinks',
         component: Drinks,
       },

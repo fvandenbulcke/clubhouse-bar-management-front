@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ResetPassword from '@/components/resetPassword';
+import ResetPassword from './components';
 
 export default {
   name: 'ResetPasswordview',

@@ -9,7 +9,7 @@
           sm="6"
           md="6"
         >
-          <Drink
+          <club-house-drink
             class="clubdrink"
             :drink="drink"
             :quantity="playerDrinksById(drink.id)"
@@ -26,16 +26,16 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import Drink from '@/components/drink';
+import ClubHouseDrink from './components/ClubHouseDrink';
 
 export default {
   name: 'drinksView',
   components: {
-    Drink,
+    ClubHouseDrink,
   },
   data() {
     return {
-      quantity: {},
+      playerDrinks: {},
     };
   },
   beforeMount() {
@@ -46,11 +46,16 @@ export default {
   },
   methods: {
     ...mapActions(['getPlayer', 'updatePlayerBill']),
-    updateQuantity(event) {
-      this.quantity = event;
+    updateQuantity({ drink, quantity }) {
+      this.playerDrinks[drink] = quantity;
     },
     updateBill() {
-      this.updatePlayerBill(this.quantity);
+      const payload = [];
+      Object.keys(this.playerDrinks).forEach((drinkId) => {
+        payload.push({ drinkId, quantity: this.playerDrinks[drinkId] });
+      });
+      console.log(payload);
+      this.updatePlayerBill(payload);
     },
   },
 };

@@ -6,7 +6,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import Players from '@/components/admin/players';
+import Players from './components/players';
 
 export default {
   name: 'adminDrinksView',

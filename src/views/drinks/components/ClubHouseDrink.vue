@@ -3,7 +3,7 @@
     <v-container>
       <v-row justify="space-between">
         <v-col cols="10">
-          <v-img alt="Vue logo" :src="require('../../assets/'+drink.label+'.png')"/>
+          <v-img alt="Vue logo" :src="require('../../../assets/'+drink.label+'.png')"/>
         </v-col>
 
         <v-col
